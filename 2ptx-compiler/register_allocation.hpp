@@ -213,7 +213,7 @@ public:
 private:
     int _avail_pregisters; // this is the # of physical registers available, but also the size of the sliding window in the linear scan algorithm
     int _temp_memory_offset = 0; // will be used in instruction selection
-    std::set<int> _active_temps_in_window; // if size of this > _avail_pregisters then spill
+    std::set<int> _active_temps_in_window; // a list of live intervals that are currently in registers. if size of this > _avail_pregisters then spill 
     
     // // added data structures for variables
     // std::set<std::string> _active_vars_in_window; 
