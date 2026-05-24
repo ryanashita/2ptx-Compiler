@@ -9,7 +9,7 @@ In my previous tutorial (~/grafting-custom-gpu-binaries/00-tutorial.md) I grafte
 
 An additional motivation for this tutorial is to help myself remember the design choices of the AST, and the specific C++ syntax that makes the AST possible (hint: it has everything to do with OOP).
 
-All files I will be referring to and pasting code snippets of will be in the ```~/toy-gpu-compiler-frontend/``` directory. 
+All files I will be referring to and pasting code snippets of will be in the ```/2ptx-compiler/``` directory. 
 
 ## Understanding taocpp/PEGTL and Building the PEG Rule Structs
 The parser is built using a parsing expression grammar (PEG) library. A parse expression grammar is a way to define a parser, and it describes a formal language in terms of a set of rules for recognizing strings in the language. The strength of PEGs is that they are deterministic and unambiguous by design, using ordered choice (/). This differs from traditional parsers which have unordered choice (|) at the grammar level, and thus has no inherent priority. PEGs are best for smaller grammars and domain-specific languages (DSL). If interested in learning about parse expression grammars further, read the Wikipedia page on the topic.   
