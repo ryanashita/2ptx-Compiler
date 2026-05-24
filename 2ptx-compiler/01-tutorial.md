@@ -1,3 +1,7 @@
+---
+layout: default
+title: Tutorial 01
+---
 # Writing a Parser and AST for custom GPU kernel Domain Specific Language
 This is a tutorial on how to write a custom parser using the taocpp/PEGTL library and how to build custom nodes that PEGTL can use to generate an abstract syntax tree (AST). The motivation behind this tutorial and its contents is part of my independent study in building a compiler that compiles custom programs to PTX -*Parallel Thread Execution (PTX) is Nvidia's low-level virtual machine and ISA acting as a stable IR for CUDA*-. 
 
