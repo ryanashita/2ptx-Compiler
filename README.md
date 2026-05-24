@@ -11,3 +11,12 @@ The second directory, 2ptx-compiler, is the actual compiler I implemented for CS
 CSCI 498 and 32 were both amazing learning experiences for me as an aspiring compiler engineer. I've been diving head first into compilers since last spring, and it has been so cool to continue building in this space. I set a pretty ambitious goal for myself this spring, and although I didn't achieve exactly what I set out to do, I've learned so much in the past few months. 
 
 I hope that anyone who finds this compiler and the "tutorials" I write will benefit from my work! 
+
+## Tutorials
+
+### Grafting GPU Binaries
+- [Tutorial 00](grafting-custom-gpu-binaries/00-tutorial.html)
+
+### Compiler
+- [Tutorial 01](2ptx-compiler/01-tutorial.html)
+- [Tutorial 02](2ptx-compiler/02-tutorial.html)
