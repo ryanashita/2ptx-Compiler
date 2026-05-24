@@ -15,7 +15,7 @@ I hope that anyone who finds this compiler and the "tutorials" I write will bene
 ## Tutorials
 
 ### Grafting GPU Binaries
-- [Tutorial 00](grafting-custom-gpu-binaries/00-tutorial.html)
+- [tutorial 00](https://ryanashita.github.io/2ptx-Compiler/grafting-custom-gpu-binaries/00-tutorial.html)
 
 ### Compiler
 - [Tutorial 01](2ptx-compiler/01-tutorial.html)
