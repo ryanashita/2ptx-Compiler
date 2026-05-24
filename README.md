@@ -15,9 +15,9 @@ I hope that anyone who finds this compiler and the "tutorials" I write will bene
 ## Tutorials
 
 ### Grafting GPU Binaries
-- [tutorial 00](https://ryanashita.github.io/2ptx-Compiler/grafting-custom-gpu-binaries/00-tutorial.html)
+- [tutorial 00: Grafting GPU Binaries](https://ryanashita.github.io/2ptx-Compiler/grafting-custom-gpu-binaries/00-tutorial.html)
 
 ### Compiler
-- [tutorial 01](https://ryanashita.github.io/2ptx-Compiler/2ptx-compiler/01-tutorial.html)
-- [tutorial 02](https://ryanashita.github.io/2ptx-Compiler/2ptx-compiler/02-tutorial.html)
-- [tutorial 03](https://ryanashita.github.io/2ptx-Compiler/2ptx-compiler/03-tutorial.html)
+- [tutorial 01: Parse Expression Grammar & AST](https://ryanashita.github.io/2ptx-Compiler/2ptx-compiler/01-tutorial.html)
+- [tutorial 02: Three-Address Code & Liveness Analysis](https://ryanashita.github.io/2ptx-Compiler/2ptx-compiler/02-tutorial.html)
+- [tutorial 03: Register Allocation](https://ryanashita.github.io/2ptx-Compiler/2ptx-compiler/03-tutorial.html)
