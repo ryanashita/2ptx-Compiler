@@ -1,3 +1,7 @@
+---
+layout: default
+title: Tutorial 00
+---
 # Grafting Custom GPU sections (.cubin files) into a fatbin file & Executing fatbins with the Nvidia Driver API
 This is a tutorial on how to graft custom GPU sections into a fatbin file, and execute them directly with the Nvidia Driver API (not using Nvidia's Runtime API). The motivation behind this tutorial and its contents is part of my independent study in building a GPU compiler. To build the backend of the GPU compiler, specifically for an NVIDIA GPU and driver, I have to learn how to modify ```.cubin``` files and graft/modify them into a ```.fatbin``` container. This is to learn how to generate SASS -*Streaming ASSembler is the assembly format for programs running on NVIDIA GPUs*- manually (not from Nvidia tools), produce correct ELF -*Executable and Linkable Format (ELF) is the file format for object files in Linux*- files, and execute these instructions on the NVIDIA driver. Since I'm ultimately building a compiler to "replace" NVCC, I have to learn to get around NVCC and the Runtime API.
 
