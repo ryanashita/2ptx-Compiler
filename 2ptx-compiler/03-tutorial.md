@@ -7,11 +7,125 @@ This is a tutorial on how to allocate temporaries generated from three-address c
 
 All files this tutorial refers to will be in the ~/2ptx-compiler/ directory.
 
+## Register Allocation
+
+The logic/algorithm I used for my first iteration of register allocation is a linear scan, a well-known method of register allocation that is significantly faster because it allocates registers in a single pass. Traditional graph-coloring approaches to register allocation are higher quality, but more computationally expensive and complex to implement. A full linear scan register allocation is already quite complex to implement. A compiler textbook like Keith D. Cooper and Linda Torczon's *Engineering a Compiler* is a good introduction to the complex methods of register allocation and all the intricacies of the algorithm, but for compiler beginners it is recommended to look up simple algorithms online. 
+
+Also, this register allocation is incomplete because it only keeps track of the state of the registers and memory after the instruction executes.
+
 ## AllocationTable
 
+The first thing to implement even before the class for register allocation is a struct to save the allocated register and memory state at each instruction. 
+```
+struct AllocationTable {
+  bool spill_happened;
+  std::unordered_map<int,int> in_register; // registernumber:temp
+  std::unordered_map<int,int> in_memory; // temp_number:memory_offset
+};
+```
+the ```bool spill_happened``` records whether a spill occured at that instruction. This is useful when selecting and scheduling instructions after register allocation. The key for ```in_register``` is the register number, and the value is a temp. This allows for the algorithm to allocate temps to any number of physical registers. The key for ```in_memory``` is the temp number, and the value is the memory offset. This is to make iterating through the map to grab the temps stored in memory easier. 
+
+When an instance of the ```RegisterAllocation``` class is initialized, a ```std::vector<AllocationTable>``` is created. 
+
 ## RegisterAllocation: class constructor and member variables
+Register allocation for the ```2ptx-compiler``` is completed through the ```RegisterAllocation``` class. A custom constructor is necessary to get all the necessary information like three-address code and liveness information. 
+```
+RegisterAllocation(
+        int n, 
+        const std::vector<std::unique_ptr<TACNode>>& tac_nodes,
+        const std::unordered_map<int, LiveRange>& ranges,
+        std::vector<LivenessInfo>& live_info_at_instruction, 
+        const std::unordered_map<std::string, LiveRange>& var_ranges) 
+            : _avail_pregisters{n}, 
+            _instructions{tac_nodes}, // reg alloc needs to know what each tac node/line does. for arithmetic,load,store
+            _live_ranges{ranges}, // live ranges to compute
+            _live_info_at_instruction{live_info_at_instruction}, 
+            _var_live_ranges{var_ranges} 
+{};
+```
+Besides ```tac_nodes```, ```ranges```, and ```live_info_at_instruction```, ```int n``` is the parameter that maps to member variable ```_avail_pregisters```, which is the count of how many physical registers to allocate for. For the ```2ptx-compiler```, this value ```n``` is arbitrary. A GPU has hundreds of registers, so the register allocation algorithm would never spill if there isn't a hard limit.
+
+```std::vector<AllocationTable> _allocations;``` was mentioned in the previous section, but this is a public member variable that keeps track of the state of registers and memory at each instruction. 
+
+The other member variables are private, meaning they can not be accessed nor modified outside of the class definition. 
+Implement ```std::set<int> _active_temps_in_window``` to keep track of all the temps that are live at that instruction and are either in registers or looking to be in a register. There may be instructions where the count of ```_active_temps_in_window``` is greater than the ```_avail_pregisters```, meaning the algorithm has to spill a temp in a register to memory to provide space for the temp that is live and required for the instruction. The other private member variables were mentioned within the constructor. The enum class TempState and the ```std::unordered_map<int, TempState> _temp_state``` are required to save the state of each temp: each temp is either in a register, in memory, or dead. 
 
 ## RegisterAllocation: allocate() method, is_used_at_instruction() helper method
+Now, lets walk through the linear-scan register allocation algorithm, the ```allocate()``` method, and its helper methods. The algorithm, in its most basic form is: for each instruction,
+1. remove old/dead temps from the active temps set
+2. add new/alive temps to the active temps set
+3. if the size of the active set is greater than the number of physical registers, a spill must occur.
+4. spill to memory the temp with the longest lifetime, meaning its ```end``` value in the ```LiveRange``` struct for this temp is the greatest of all the live temps
+5. fill the newly empty register with the newly alive temp
+6. if a spill is unnecessary, just add the newly alive temp to one of the free registers.
+
+Implementing this in C++ is easier said than done, but the ```2ptx-compiler``` register allocation algorithm generally follows the steps outlined above. First, remove all un-live temps from the active-temps set, using an iterator-based loop. The iterator-based loop, 
+```
+for (auto it = _active_temps_in_window.begin(); it != _active_temps_in_window.end(); )...
+```
+is necessary because the code within the loop modifies the container ```_active_temps_in_window``` while iterating over it. When erase() is called on a set, the iterator pointing to the erased element becomes invalid. This causes problems if the code is using a range based loop.
+
+Next, for every temp that is live in the ```_live_info_at_instruction[i].live_after``` instance of ```LivenessInfo```, check if it needs to be in a register if it isn't already. If the temp is ```TempState::IN_MEMORY```,
+```
+if (is_used_at_instruction(_instructions[i].get(), after)) {
+    needs_register = true; // triggers a load
+    _temp_state[after] = TempState::IN_REGISTER;
+}
+```
+This conditional checks if the the temp ```after``` is used at the current instruction. The helper method, ```bool is_used_at_instruction(TACNode* instr, int temp)``` returns ```true``` if the instruction uses the temp, and ```false``` otherwise.
+```
+bool is_used_at_instruction(TACNode* instr, int temp) {
+    if (auto* tac_binary = dynamic_cast<TACBinaryOp*>(instr)) {
+        auto check_operand = [temp](const Operand& op) -> bool {
+            if (std::holds_alternative<Temp>(op)) {
+                return std::get<Temp>(op).identifer == temp; 
+            }
+            return false; 
+        };
+        return check_operand(tac_binary->_operand1) || check_operand(tac_binary->_operand2); 
+    } 
+    if (auto* tac_store = dynamic_cast<TACStore*>(instr)) {
+        return tac_store->_temporary.identifer == temp; 
+    }
+    if (auto* tac_load = dynamic_cast<TACLoad*>(instr)) {
+        return tac_load->_dest_temp.identifer == temp; 
+    }
+    return false; 
+}
+```
+Since only ```TACBinaryOp```, ```TACStore```, and ```TACLoad``` use temporaries as rvalues (values on the right-hand side), these three-address code instructions are the only ones to check for temp use. 
+
+If ```is_used_at_instruction``` returns ```true```, the temp needs a register, hence ```needs_register = true```, and then it's state is modified to ```TempState::IN_REGISTER```. 
+
+Next, the algorithm should check if its on the first instruction. If so, the program doesn't have information of the registers or memory at the previous instruction because a previous instruction doesn't exist. Instead, it should populate the ```in_register``` with all the ```_active_temps_in_window```. Here is the full conditional: 
+```
+if (i == 0) {
+    std::cout << "debug line 81" << std::endl; 
+    int j = 0; 
+    for (auto& temp : _active_temps_in_window) {
+        i_instruction_registers[j] = temp; 
+        ++j;
+    }
+    _allocations.push_back(AllocationTable{.spill_happened = false,.in_register = i_instruction_registers, .in_memory = {}}); 
+    ++i;
+    continue;
+}
+```
+
+Moving on, once the spilled temp information is gathered and the active set is modified, the algorithm needs to spill or simply assign the new temp to a register. If ```if (_active_temps_in_window.size() > _avail_pregisters)``` is true, this means there are more live temps that need registers than there are physical registers. A spill is required. Within this if statement, the algorithm should choose a temp from a register to spill, and assign the new temp to the register that was just freed. The method this compiler uses to determine which register to spill is simple: spill the register holding the temp that has the longest life. This method is easy and should be the first method one should implement.
+```
+i_instruction_memory[_temp_memory_offset] = longest_living_temp;
+_temp_state[longest_living_temp] = TempState::IN_MEMORY;
+++_temp_memory_offset;
+_active_temps_in_window.erase(longest_living_temp);
+```
+Since a spilled temporary is no longer in registers, it technically does not actively require a register, and thus is removed from the active set. The newly open register is filled with the temp, ```*inserted_it```.
+
+In the case that there are less ```_active_temps_in_window``` than ```_avail_pregisters```, the algorithm simply assigns the temp ```*inserted_it``` to whichever register is available, by iterating through the instruction registers. 
+
+Finally, for whichever scenario the current instruction leads down, at the end the ```_allocations``` vector must be updated with the allocation information for the instruction: ```_allocations.push_back(AllocationTable{.spill_happened = BOOLEAN,.in_register = MAP, .in_memory = MAP});```
+
+That's it for the ```allocate()``` method! Obviously, this tutorial doesn't explore the specifics of the algorithm line-by-line, since that is what the code is there for. The code for register allocation can be found at ```/2ptx-compiler/register_allocation.hpp```.
 
 ## The other half of register allocation...
 elephant in the room. The register allocation currently only records the register allocation table for the state after each instruction is run. But for instructions where a temporary needs to be loaded from memory, the load is not 
