@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/rick/2ptx-Compiler/2ptx-compiler/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

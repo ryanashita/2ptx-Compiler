@@ -103,7 +103,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
 
 //Value Computed by CMake.
-CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/CMakeFiles/pkgRedirects
+CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/home/rick/2ptx-Compiler/2ptx-compiler/build/CMakeFiles/pkgRedirects
 
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=/usr/local
@@ -150,7 +150,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=toy-gpu-compiler-frontend
+CMAKE_PROJECT_NAME:STATIC=2ptx-compiler
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1.0
@@ -267,13 +267,13 @@ MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 SITE:STRING=indie3
 
 //Value Computed by CMake
-toy-gpu-compiler-frontend_BINARY_DIR:STATIC=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build
+toy-gpu-compiler-frontend_BINARY_DIR:STATIC=/home/rick/2ptx-Compiler/2ptx-compiler/build
 
 //Value Computed by CMake
 toy-gpu-compiler-frontend_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-toy-gpu-compiler-frontend_SOURCE_DIR:STATIC=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend
+toy-gpu-compiler-frontend_SOURCE_DIR:STATIC=/home/rick/2ptx-Compiler/2ptx-compiler
 
 
 ########################
@@ -285,7 +285,7 @@ CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
 //This is the directory where this CMakeCache.txt was created
-CMAKE_CACHEFILE_DIR:INTERNAL=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build
+CMAKE_CACHEFILE_DIR:INTERNAL=/home/rick/2ptx-Compiler/2ptx-compiler/build
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
@@ -360,7 +360,7 @@ CMAKE_GENERATOR_PLATFORM:INTERNAL=
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/rick/2ptx-Compiler/2ptx-compiler
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
