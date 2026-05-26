@@ -14,12 +14,24 @@ I hope that anyone who finds this compiler and the "tutorials" I write will bene
 
 GitHub Pages link: [https://ryanashita.github.io/2ptx-Compiler](https://ryanashita.github.io/2ptx-Compiler)
 
-## How to run the 2ptx-compiler
+## How to Run the 2ptx-compiler
 1. Write a program in the DSL. An example is ```2;3;5;x=(3+5);6;7;y=(6+2);```. Some notes for the program:
 - semi-colons separate statements
 - arithmetic must be in parentheses if the result of the arithmetic is the rvalue for an assignment
 2. Navigate to ```~/2ptx-Compiler/2ptx-compiler```
-3. Run the command ```cmake --build build```
+3. Run the command ```cmake --build build```. This compiles and links the code on CMake's generated build files
+4. Navigate to ```~/2ptx-Compiler/2ptx-compiler/build```
+5. Run the compiler with the command ```./program "PROGRAM"```. Add a program where it saids PROGRAM, such as the example program from step 1.
+  
+## Writing and Running Tests
+The unit tests for this compiler are from the Catch2 test framework.
+
+To add tests: 
+1. Navigate to ```~/2ptx-Compiler/2ptx-compiler/test/test_compiler.cpp``` and add tests
+
+To run all tests: 
+1. Navigate to ```~/2ptx-Compiler/2ptx-compiler/build```
+2. Run the command ```ctest``` to run all tests
 
 ## Tutorials
 
