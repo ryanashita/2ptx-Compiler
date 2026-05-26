@@ -314,7 +314,6 @@ public:
     }
 
     std::string print_expr(int indent = 0) const override {
-        // std::cout << "print exprlist" << std::endl; 
         std::string result = std::string(indent * 2,' ') + "ExprList[\n"; 
         for (int i = 0; i < expression_list.size(); ++i) {
             result += expression_list.at(i)->print_expr(indent + 1); 

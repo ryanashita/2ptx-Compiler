@@ -11,7 +11,8 @@
 // temps, if spilled, are stored in PTX local memory
 struct AllocationTable {
     bool spill_happened;
-    std::unordered_map<int,int> in_register; // registernumber:temp
+    std::unordered_map<int,int> in_register_before; // registernumber:temp
+    std::unordered_map<int,int> in_register_after; 
     std::unordered_map<int,int> in_memory; // temp_number:memory_offset
 };
 
@@ -33,11 +34,12 @@ public:
     {};
 
     void allocate() {
+        _allocations.resize(_instructions.size()); 
         size_t i = 0; 
         while (i < _instructions.size()) {
-            std::cout << "debug line 34: instruction " << i << std::endl; 
+            std::cout << "Instruction " << i << std::endl; 
 
-            // remove all un-live temps from the active-temps set, using iterator-based loop
+            /* step 1: remove dead temps from active set */
             for (auto it = _active_temps_in_window.begin(); it != _active_temps_in_window.end(); ) {
                 int active_temp = *it;
                 LiveRange cur_temp_range = _live_ranges.at(active_temp);
@@ -50,40 +52,167 @@ public:
                 }
             }
 
-            std::cout << "debug line 41" << std::endl; 
+            /* step 2: initialize before state from previous after state */
+            if (i != 0) {
+                _allocations[i].in_register_before = _allocations[i-1].in_register_after;
+                _allocations[i].in_memory = _allocations[i-1].in_memory;
+            }
+            
+            // remove dead temps from before state 
+            for (auto it = _allocations[i].in_register_before.begin(); it != _allocations[i].in_register_before.end(); ) {
+                if (_temp_state[it->second] == TempState::DEAD) {
+                    it = _allocations[i].in_register_before.erase(it);
+                } else {
+                    ++it;
+                }
+            }
+
+            /* step 3: load operands into registers (if spilled) */
+
+            
             // live_after is important here. add all non-duplicate temps to the current active temporaries (active temps need a register)
             // non-duplicate because a duplicate just means that the temp was live before and still remains alive at this instruction
             // only one temp gets added to the active temp window at a time bc only one temp is created in a line
             std::set<int>::iterator inserted_it = _active_temps_in_window.end(); 
-            for (auto& after : _live_info_at_instruction[i].live_after) {
+            for (auto& before : _live_info_at_instruction[i].live_before) {
                 bool needs_register = false; 
-                switch (_temp_state[after]) {
+                switch (_temp_state[before]) {
                     case TempState::IN_REGISTER:
-                        needs_register = true; 
+                        auto it = _active_temps_in_window.insert(before);
+                        if (it.second) {
+                            inserted_it = it.first;
+                            std::cout << "instruction " << i << " temp to add somewhere: " << *inserted_it << std::endl; 
+                        }
                         break;
                     case TempState::IN_MEMORY:
                         // check if this temp 'after' is needed in this instruction for a binaryop, load, or a store  
-                        std::cout << "check if temp " << after << " is needed in instruction" << i << std::endl; 
-                        if (is_used_at_instruction(_instructions[i].get(), after)) {
-                            needs_register = true; // triggers a load
-                            _temp_state[after] = TempState::IN_REGISTER;
-                        }
+                        std::cout << "check if temp " << before << " is needed in instruction" << i << std::endl; 
+                        if (auto* tac_binary = dynamic_cast<TACBinaryOp*>(_instructions[i].get())) {
+                            int operand1_id = -1, operand2_id = -1; 
+                            if (std::holds_alternative<Temp>(tac_binary->_operand1)) {
+                                if (std::get<Temp>(tac_binary->_operand1).identifer == before) {
+                                    operand1_id = std::get<Temp>(tac_binary->_operand1).identifer;
+                                }
+                                // return std::get<Temp>(op).identifer == temp; 
+                            }
+                            if (std::holds_alternative<Temp>(tac_binary->_operand2)) {
+                                if (std::get<Temp>(tac_binary->_operand2).identifer == before) {
+                                    operand2_id = std::get<Temp>(tac_binary->_operand2).identifer;
+                                }
+                            }
+                            if (operand1_id != -1) {
+                                int reg1 = get_register_for_temp(i, operand1_id);
+                                for (auto& [reg, t] : _allocations[i].in_register_before) {
+                                    if (t == operand1_id) {
+                                        reg1 = reg;
+                                    }
+                                }
+                                
+                                // Find its spill location
+                                int spill_offset = -1;
+                                for (auto& [offset, t] : _allocations[i].in_memory) {
+                                    if (t == operand1_id) {
+                                        spill_offset = offset;
+                                        break;
+                                    }
+                                }
+                                
+                                if (spill_offset != -1) { // if in memory, have to get and load
+                                    int free_reg = -1;
+                                    // get the free register
+                                    for (int r = 0; r < _avail_pregisters; ++r) {
+                                        if (_allocations[i].in_register_before.find(r) == _allocations[i].in_register_before.end()) {
+                                            free_reg = r;
+                                            break;
+                                        }
+                                    }
+                                    
+                                    if (free_reg == -1) { // no free registers, so need to spill
+                                        free_reg = 0; // TODO add spill logic
+                                    }
+                                    
+                                    // load from memory to register
+                                    _allocations[i].in_register_before[free_reg] = operand1_id;
+                                    _temp_state[operand1_id] = TempState::IN_REGISTER;
+                                    std::cout << "Loaded temp " << operand1_id << " from offset " << spill_offset 
+                                            << " into register " << free_reg << std::endl;
+                                    reg1 = free_reg;
+                                }
+                                
+                                if (reg1 == -1) {
+                                    // need to allocate register for operand1
+                                    for (int r = 0; r < _avail_pregisters; ++r) {
+                                        if (_allocations[i].in_register_before.find(r) == _allocations[i].in_register_before.end()) {
+                                            _allocations[i].in_register_before[r] = operand1_id;
+                                            _temp_state[operand1_id] = TempState::IN_REGISTER;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+
+                            if (operand2_id != -1) {
+                                int reg2 = get_register_for_temp(i, operand2_id);
+                                for (auto& [reg, t] : _allocations[i].in_register_before) {
+                                    if (t == operand2_id) {
+                                        reg2 = reg;
+                                    }
+                                }
+                                
+                                // Find its spill location
+                                int spill_offset = -1;
+                                for (auto& [offset, t] : _allocations[i].in_memory) {
+                                    if (t == operand2_id) {
+                                        spill_offset = offset;
+                                        break;
+                                    }
+                                }
+                                
+                                if (spill_offset != -1) { // if in memory, have to get and load
+                                    int free_reg = -1;
+                                    // get the free register
+                                    for (int r = 0; r < _avail_pregisters; ++r) {
+                                        if (_allocations[i].in_register_before.find(r) == _allocations[i].in_register_before.end()) {
+                                            free_reg = r;
+                                            break;
+                                        }
+                                    }
+                                    
+                                    if (free_reg == -1) { // no free registers, so need to spill
+                                        free_reg = 0; // TODO add spill logic
+                                    }
+                                    
+                                    // load from memory to register
+                                    _allocations[i].in_register_before[free_reg] = operand2_id;
+                                    _temp_state[operand2_id] = TempState::IN_REGISTER;
+                                    std::cout << "Loaded temp " << operand2_id << " from offset " << spill_offset 
+                                            << " into register " << free_reg << std::endl;
+                                    reg2 = free_reg;
+                                }
+                                
+                                if (reg2 == -1) {
+                                    // need to allocate register for operand1
+                                    for (int r = 0; r < _avail_pregisters; ++r) {
+                                        if (_allocations[i].in_register_before.find(r) == _allocations[i].in_register_before.end()) {
+                                            _allocations[i].in_register_before[r] = operand1_id;
+                                            _temp_state[operand2_id] = TempState::IN_REGISTER;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        } 
                         break;
                     case TempState::DEAD:
                         break; 
                     default:
-                        needs_register = true;
-                        _temp_state[after] = TempState::IN_REGISTER;
+                        _temp_state[before] = TempState::IN_REGISTER;
+                        auto it = _active_temps_in_window.insert(before);
+                        if (it.second) {
+                            inserted_it = it.first;
+                            std::cout << "instruction " << i << " temp to add somewhere: " << *inserted_it << std::endl; 
+                        }
                         break;
-                }
-                if (needs_register) {
-                    // saving the iterator and not just temp 'after' bc have to confirm that 'after' wasn't a duplicate and does indeed need to be placed in a register
-                    auto it = _active_temps_in_window.insert(after);
-                    if (it.second) {
-                        inserted_it = it.first;
-                        std::cout << "instruction " << i << " temp to add somewhere: " << *inserted_it << std::endl; 
-                    }
-                
                 }
             }
 
@@ -107,7 +236,10 @@ public:
                     i_instruction_registers[j] = temp; 
                     ++j;
                 }
-                _allocations.push_back(AllocationTable{.spill_happened = false,.in_register = i_instruction_registers, .in_memory = {}}); 
+                _allocations[i].spill_happened = false; 
+                _allocations[i].in_register_before = {};
+                _allocations[i].in_register_after = i_instruction_registers;
+                _allocations[i].in_memory = {};
                 ++i;
                 continue;
             }
@@ -117,16 +249,16 @@ public:
             // the rest of the logic in the function is for instructions i > 0. 
             
             // only add values from registers if they are still live
-            AllocationTable prev_alloca = _allocations[i-1];
+            // AllocationTable prev_alloca = _allocations[i-1];
             std::cout << "debug line 94" << std::endl;
-            for (auto& [reg,temp] : prev_alloca.in_register) {
+            for (auto& [reg,temp] : _allocations[i-1].in_register_after) {
                 if (_temp_state[temp] != TempState::DEAD) {
                      i_instruction_registers[reg] = temp; 
                 }
             }
 
             // only add values from memory if they are still live
-            for (auto& [offset,temp] : prev_alloca.in_memory) {
+            for (auto& [offset,temp] : _allocations[i-1].in_memory) {
                 if (_temp_state[temp] != TempState::DEAD) {
                      i_instruction_memory[offset] = temp; 
                 }
@@ -136,7 +268,6 @@ public:
             if (auto* tac_store = dynamic_cast<TACStore*>(_instructions[i].get())) {
                 TACVariable var = tac_store->_dest_variable;
                 Temp temp = tac_store->_temporary; 
-
             }   
 
             std::cout << "debug line 100" << std::endl; 
@@ -153,12 +284,12 @@ public:
                     three-address code line 0, it is impossible for 
                     this to occur, and this it is ok to say i-1 below. 
                 */
-                if (prev_alloca.in_register.size() > _avail_pregisters) std::exit; 
+                if (_allocations[i-1].in_register_before.size() > _avail_pregisters) std::exit; 
                 
                 // check if r1 or r2 temp lives longer
                 int longest_living_temp = -1; 
                 int reg_being_modified; 
-                for (auto& [reg,temp] : prev_alloca.in_register) {
+                for (auto& [reg,temp] : _allocations[i-1].in_register_before) {
                     if (_live_ranges.at(temp).end > longest_living_temp) {
                         longest_living_temp = temp; 
                         reg_being_modified = reg;
@@ -173,7 +304,7 @@ public:
                 _active_temps_in_window.erase(longest_living_temp);
         
                 // change the temp at the register that should be modified, to the inserted
-                i_instruction_registers = prev_alloca.in_register;
+                i_instruction_registers = _allocations[i-1].in_register_before;
 
                 if (inserted_it != _active_temps_in_window.end()) {
                     i_instruction_registers[reg_being_modified] = *inserted_it;
@@ -185,7 +316,9 @@ public:
                 // i_instruction_registers.erase(it); 
 
                 // create the allocation table for this instruction i
-                _allocations.push_back(AllocationTable{.spill_happened = true,.in_register = i_instruction_registers, .in_memory = i_instruction_memory});
+                _allocations[i].spill_happened = true;
+                _allocations[i].in_register_after = i_instruction_registers;
+                _allocations[i].in_memory = i_instruction_memory;
             } else {
                 std::cout << "line 186 less active temps than avail registers" << std::endl; 
                 // simply add to instruction registers and memory
@@ -199,10 +332,12 @@ public:
                     // } else if (prev_alloca.in_register.find(k) != prev_alloca.in_register.end() && )
                     }
                 }
-                _allocations.push_back(AllocationTable{.spill_happened = false,.in_register = i_instruction_registers, .in_memory = prev_alloca.in_memory}); 
+                _allocations[i].spill_happened = false;
+                _allocations[i].in_register_after = i_instruction_registers;
+                _allocations[i].in_memory = _allocations[i-1].in_memory;
             }
             std::cout << "Allocation Table - registers{";
-            for (auto& [r,t] : _allocations[i].in_register) {
+            for (auto& [r,t] : _allocations[i].in_register_after) {
                 std::cout << r << ":" << t << ",";
             }
             std::cout << "}" << std::endl;
@@ -219,11 +354,8 @@ private:
     // std::set<std::string> _active_vars_in_window; 
     const std::unordered_map<std::string, LiveRange>& _var_live_ranges; 
     
-
     // temp to memory offset
 
-
-    
     const std::vector<std::unique_ptr<TACNode>>& _instructions; 
     const std::unordered_map<int, LiveRange>& _live_ranges; 
     const std::vector<LivenessInfo>& _live_info_at_instruction;
@@ -237,23 +369,89 @@ private:
     std::unordered_map<int, TempState> _temp_state; 
     std::unordered_map<std::string, TempState> _var_state; 
     
-    bool is_used_at_instruction(TACNode* instr, int temp) {
-        if (auto* tac_binary = dynamic_cast<TACBinaryOp*>(instr)) {
-            auto check_operand = [temp](const Operand& op) -> bool {
-                if (std::holds_alternative<Temp>(op)) {
-                    return std::get<Temp>(op).identifer == temp; 
+    // bool is_used_at_instruction(TACNode* instr, int temp, std::unordered_map<int,int>& reg_map, std::unordered_map<int,int>& mem_map) {
+    //     if (auto* tac_binary = dynamic_cast<TACBinaryOp*>(instr)) {
+    //         int operand1_id = -1, operand2_id = -1; 
+    //         if (std::holds_alternative<Temp>(tac_binary->_operand1)) {
+    //             operand1_id = std::get<Temp>(tac_binary->_operand1).identifer;
+    //         }
+    //         if (std::holds_alternative<Temp>(tac_binary->_operand2)) {
+    //             operand2_id = std::get<Temp>(tac_binary->_operand2).identifer;
+    //         }
+
+    //         if (operand1_id != -1) {
+    //             int reg1 = get_register_for_temp(operand1_id, reg_map, mem_map);
+    //             if (reg1 == -1) {
+    //                 // need to allocate register for operand1
+    //                 for (int r = 0; r < _avail_pregisters; ++r) {
+    //                     if (reg_map.find(r) == reg_map.end()) {
+    //                         reg_map[r] = operand1_id;
+    //                         _temp_state[operand1_id] = TempState::IN_REGISTER;
+    //                         break;
+    //                     }
+    //                 }
+    //             }
+    //         }
+
+    //         // auto check_operand = [temp](const Operand& op) -> bool {
+    //         //     if (std::holds_alternative<Temp>(op)) {
+    //         //         return std::get<Temp>(op).identifer == temp; 
+    //         //     }
+    //         //     return false; 
+    //         // };
+    //         // return check_operand(tac_binary->_operand1) || check_operand(tac_binary->_operand2); 
+    //     } 
+    //     if (auto* tac_store = dynamic_cast<TACStore*>(instr)) {
+    //         return tac_store->_temporary.identifer == temp; 
+    //     }
+    //     if (auto* tac_load = dynamic_cast<TACLoad*>(instr)) {
+    //         return tac_load->_dest_temp.identifer == temp; 
+    //     }
+    //     return false; 
+    // }
+
+    // get a register for a temp, loading from memory if needed
+    int get_register_for_temp(int idx, int temp_id) {
+        for (auto& [reg, t] : _allocations[idx].in_register_before) {
+            if (t == temp_id) {
+                return reg;
+            }
+        }
+        
+        // Temp not in register - check if it's spilled
+        if (_temp_state[temp_id] == TempState::IN_MEMORY) {
+            // Find its spill location
+            int spill_offset = -1;
+            for (auto& [offset, t] : _allocations[idx].in_memory) {
+                if (t == temp_id) {
+                    spill_offset = offset;
+                    break;
                 }
-                return false; 
-            };
-            return check_operand(tac_binary->_operand1) || check_operand(tac_binary->_operand2); 
-        } 
-        if (auto* tac_store = dynamic_cast<TACStore*>(instr)) {
-            return tac_store->_temporary.identifer == temp; 
+            }
+            
+            if (spill_offset != -1) { // if in memory, have to get and load
+                int free_reg = -1;
+                // get the free register
+                for (int r = 0; r < _avail_pregisters; ++r) {
+                    if (_allocations[idx].in_register_before.find(r) == _allocations[idx].in_register_before.end()) {
+                        free_reg = r;
+                        break;
+                    }
+                }
+                
+                if (free_reg == -1) { // no free registers, so need to spill
+                    free_reg = 0; // TODO add spill logic
+                }
+                
+                // load from memory to register
+                _allocations[idx].in_register_before[free_reg] = temp_id;
+                _temp_state[temp_id] = TempState::IN_REGISTER;
+                std::cout << "Loaded temp " << temp_id << " from offset " << spill_offset 
+                        << " into register " << free_reg << std::endl;
+                return free_reg;
+            }
         }
-        if (auto* tac_load = dynamic_cast<TACLoad*>(instr)) {
-            return tac_load->_dest_temp.identifer == temp; 
-        }
-        return false; 
+        return -1; // Not found
     }
 };
 

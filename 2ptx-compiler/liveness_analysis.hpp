@@ -150,7 +150,6 @@ private:
             defs.push_back(tac_binary->_dest.identifer); 
         } else if (auto* tac_load = dynamic_cast<TACLoad*>(instr)) {
             defs.push_back(tac_load->_dest_temp.identifer);
-        } else if (auto* tac_store = dynamic_cast<TACStore*>(instr)) {
         }
         return defs;
     }
