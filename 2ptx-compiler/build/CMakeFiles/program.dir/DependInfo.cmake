@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.cpp" "CMakeFiles/program.dir/parser.cpp.o" "gcc" "CMakeFiles/program.dir/parser.cpp.o.d"
-  "/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/program.cpp" "CMakeFiles/program.dir/program.cpp.o" "gcc" "CMakeFiles/program.dir/program.cpp.o.d"
+  "/home/rick/2ptx-Compiler/2ptx-compiler/parser.cpp" "CMakeFiles/program.dir/parser.cpp.o" "gcc" "CMakeFiles/program.dir/parser.cpp.o.d"
+  "/home/rick/2ptx-Compiler/2ptx-compiler/program.cpp" "CMakeFiles/program.dir/program.cpp.o" "gcc" "CMakeFiles/program.dir/program.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

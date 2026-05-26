@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend
+CMAKE_SOURCE_DIR = /home/rick/2ptx-Compiler/2ptx-compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build
+CMAKE_BINARY_DIR = /home/rick/2ptx-Compiler/2ptx-compiler/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/compiler_tests.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/compiler_tests.dir/progress.make
 include CMakeFiles/compiler_tests.dir/flags.make
 
 CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o: CMakeFiles/compiler_tests.dir/flags.make
-CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o: /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/test/test_parser.cpp
+CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o: /home/rick/2ptx-Compiler/2ptx-compiler/test/test_parser.cpp
 CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o: CMakeFiles/compiler_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o -MF CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o.d -o CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o -c /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/test/test_parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rick/2ptx-Compiler/2ptx-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o -MF CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o.d -o CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o -c /home/rick/2ptx-Compiler/2ptx-compiler/test/test_parser.cpp
 
 CMakeFiles/compiler_tests.dir/test/test_parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/compiler_tests.dir/test/test_parser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/test/test_parser.cpp > CMakeFiles/compiler_tests.dir/test/test_parser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rick/2ptx-Compiler/2ptx-compiler/test/test_parser.cpp > CMakeFiles/compiler_tests.dir/test/test_parser.cpp.i
 
 CMakeFiles/compiler_tests.dir/test/test_parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/compiler_tests.dir/test/test_parser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/test/test_parser.cpp -o CMakeFiles/compiler_tests.dir/test/test_parser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rick/2ptx-Compiler/2ptx-compiler/test/test_parser.cpp -o CMakeFiles/compiler_tests.dir/test/test_parser.cpp.s
 
 CMakeFiles/compiler_tests.dir/parser.cpp.o: CMakeFiles/compiler_tests.dir/flags.make
-CMakeFiles/compiler_tests.dir/parser.cpp.o: /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.cpp
+CMakeFiles/compiler_tests.dir/parser.cpp.o: /home/rick/2ptx-Compiler/2ptx-compiler/parser.cpp
 CMakeFiles/compiler_tests.dir/parser.cpp.o: CMakeFiles/compiler_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/compiler_tests.dir/parser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compiler_tests.dir/parser.cpp.o -MF CMakeFiles/compiler_tests.dir/parser.cpp.o.d -o CMakeFiles/compiler_tests.dir/parser.cpp.o -c /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rick/2ptx-Compiler/2ptx-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/compiler_tests.dir/parser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compiler_tests.dir/parser.cpp.o -MF CMakeFiles/compiler_tests.dir/parser.cpp.o.d -o CMakeFiles/compiler_tests.dir/parser.cpp.o -c /home/rick/2ptx-Compiler/2ptx-compiler/parser.cpp
 
 CMakeFiles/compiler_tests.dir/parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/compiler_tests.dir/parser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.cpp > CMakeFiles/compiler_tests.dir/parser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rick/2ptx-Compiler/2ptx-compiler/parser.cpp > CMakeFiles/compiler_tests.dir/parser.cpp.i
 
 CMakeFiles/compiler_tests.dir/parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/compiler_tests.dir/parser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.cpp -o CMakeFiles/compiler_tests.dir/parser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rick/2ptx-Compiler/2ptx-compiler/parser.cpp -o CMakeFiles/compiler_tests.dir/parser.cpp.s
 
 # Object files for target compiler_tests
 compiler_tests_OBJECTS = \
@@ -111,9 +111,9 @@ compiler_tests: CMakeFiles/compiler_tests.dir/build.make
 compiler_tests: /usr/lib/libCatch2Main.a
 compiler_tests: /usr/lib/libCatch2.a
 compiler_tests: CMakeFiles/compiler_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable compiler_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/rick/2ptx-Compiler/2ptx-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable compiler_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/compiler_tests.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/cmake -D TEST_TARGET=compiler_tests -D TEST_EXECUTABLE=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/compiler_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build -D TEST_SPEC= -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_LIST=compiler_tests_TESTS -D TEST_REPORTER= -D TEST_OUTPUT_DIR= -D TEST_OUTPUT_PREFIX= -D TEST_OUTPUT_SUFFIX= -D TEST_DL_PATHS= -D CTEST_FILE=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/compiler_tests_tests-b12d07c.cmake -P /usr/lib/cmake/Catch2/CatchAddTests.cmake
+	/usr/bin/cmake -D TEST_TARGET=compiler_tests -D TEST_EXECUTABLE=/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/rick/2ptx-Compiler/2ptx-compiler/build -D TEST_SPEC= -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_LIST=compiler_tests_TESTS -D TEST_REPORTER= -D TEST_OUTPUT_DIR= -D TEST_OUTPUT_PREFIX= -D TEST_OUTPUT_SUFFIX= -D TEST_DL_PATHS= -D CTEST_FILE=/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests_tests-b12d07c.cmake -P /usr/lib/cmake/Catch2/CatchAddTests.cmake
 
 # Rule to build all files generated by this target.
 CMakeFiles/compiler_tests.dir/build: compiler_tests
@@ -124,6 +124,6 @@ CMakeFiles/compiler_tests.dir/clean:
 .PHONY : CMakeFiles/compiler_tests.dir/clean
 
 CMakeFiles/compiler_tests.dir/depend:
-	cd /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/CMakeFiles/compiler_tests.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/rick/2ptx-Compiler/2ptx-compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rick/2ptx-Compiler/2ptx-compiler /home/rick/2ptx-Compiler/2ptx-compiler /home/rick/2ptx-Compiler/2ptx-compiler/build /home/rick/2ptx-Compiler/2ptx-compiler/build /home/rick/2ptx-Compiler/2ptx-compiler/build/CMakeFiles/compiler_tests.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/compiler_tests.dir/depend
 

@@ -1,5 +1,5 @@
 CMakeFiles/program.dir/program.cpp.o: \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/program.cpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/program.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -150,7 +150,7 @@ CMakeFiles/program.dir/program.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.hpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/parser.hpp \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
@@ -379,17 +379,17 @@ CMakeFiles/program.dir/program.cpp.o: \
  /usr/include/tao/pegtl/parse.hpp /usr/include/tao/pegtl/rewind_mode.hpp \
  /usr/include/tao/pegtl/internal/enable_control.hpp \
  /usr/include/tao/pegtl/internal/iterator.hpp \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/ast.hpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/ast.hpp \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \
  /usr/include/c++/13/bits/hashtable_policy.h \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/erase_if.h \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/tac_nodes.hpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/tac_nodes.hpp \
  /usr/include/c++/13/variant /usr/include/c++/13/format \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/liveness_analysis.hpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/liveness_analysis.hpp \
  /usr/include/c++/13/set /usr/include/c++/13/bits/stl_tree.h \
  /usr/include/c++/13/bits/stl_set.h \
  /usr/include/c++/13/bits/stl_multiset.h \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/register_allocation.hpp
+ /home/rick/2ptx-Compiler/2ptx-compiler/register_allocation.hpp

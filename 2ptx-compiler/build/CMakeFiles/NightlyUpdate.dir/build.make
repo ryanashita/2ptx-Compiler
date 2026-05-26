@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend
+CMAKE_SOURCE_DIR = /home/rick/2ptx-Compiler/2ptx-compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build
+CMAKE_BINARY_DIR = /home/rick/2ptx-Compiler/2ptx-compiler/build
 
 # Utility rule file for NightlyUpdate.
 
@@ -82,6 +82,6 @@ CMakeFiles/NightlyUpdate.dir/clean:
 .PHONY : CMakeFiles/NightlyUpdate.dir/clean
 
 CMakeFiles/NightlyUpdate.dir/depend:
-	cd /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/CMakeFiles/NightlyUpdate.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/rick/2ptx-Compiler/2ptx-compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rick/2ptx-Compiler/2ptx-compiler /home/rick/2ptx-Compiler/2ptx-compiler /home/rick/2ptx-Compiler/2ptx-compiler/build /home/rick/2ptx-Compiler/2ptx-compiler/build /home/rick/2ptx-Compiler/2ptx-compiler/build/CMakeFiles/NightlyUpdate.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/NightlyUpdate.dir/depend
 

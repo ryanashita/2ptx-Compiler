@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/program.dir/parser.cpp.o CMakeFiles/program.dir/program.cpp.o -o program 
+/usr/bin/c++ CMakeFiles/program.dir/parser.cpp.o CMakeFiles/program.dir/program.cpp.o -o program 

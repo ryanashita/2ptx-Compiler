@@ -1,5 +1,5 @@
 CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o: \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/test/test_parser.cpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/test/test_parser.cpp \
  /usr/include/stdc-predef.h /usr/include/catch2/catch_test_macros.hpp \
  /usr/include/catch2/internal/catch_test_macro_impl.hpp \
  /usr/include/catch2/catch_user_config.hpp \
@@ -199,7 +199,7 @@ CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o: \
  /usr/include/catch2/internal/catch_test_registry.hpp \
  /usr/include/catch2/interfaces/catch_interfaces_test_invoker.hpp \
  /usr/include/catch2/internal/catch_preprocessor_remove_parens.hpp \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.hpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/parser.hpp \
  /usr/include/c++/13/iostream /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc /usr/include/tao/pegtl.hpp \
  /usr/include/tao/pegtl/config.hpp /usr/include/tao/pegtl/demangle.hpp \
@@ -418,13 +418,13 @@ CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o: \
  /usr/include/tao/pegtl/parse.hpp /usr/include/tao/pegtl/rewind_mode.hpp \
  /usr/include/tao/pegtl/internal/enable_control.hpp \
  /usr/include/tao/pegtl/internal/iterator.hpp \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/ast.hpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/ast.hpp \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \
  /usr/include/c++/13/bits/hashtable_policy.h \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/erase_if.h \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/tac_nodes.hpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/tac_nodes.hpp \
  /usr/include/c++/13/variant /usr/include/c++/13/format \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/ast.hpp
+ /home/rick/2ptx-Compiler/2ptx-compiler/ast.hpp

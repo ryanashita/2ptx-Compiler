@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend
+CMAKE_SOURCE_DIR = /home/rick/2ptx-Compiler/2ptx-compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build
+CMAKE_BINARY_DIR = /home/rick/2ptx-Compiler/2ptx-compiler/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/program.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/program.dir/progress.make
 include CMakeFiles/program.dir/flags.make
 
 CMakeFiles/program.dir/parser.cpp.o: CMakeFiles/program.dir/flags.make
-CMakeFiles/program.dir/parser.cpp.o: /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.cpp
+CMakeFiles/program.dir/parser.cpp.o: /home/rick/2ptx-Compiler/2ptx-compiler/parser.cpp
 CMakeFiles/program.dir/parser.cpp.o: CMakeFiles/program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/program.dir/parser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/program.dir/parser.cpp.o -MF CMakeFiles/program.dir/parser.cpp.o.d -o CMakeFiles/program.dir/parser.cpp.o -c /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rick/2ptx-Compiler/2ptx-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/program.dir/parser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/program.dir/parser.cpp.o -MF CMakeFiles/program.dir/parser.cpp.o.d -o CMakeFiles/program.dir/parser.cpp.o -c /home/rick/2ptx-Compiler/2ptx-compiler/parser.cpp
 
 CMakeFiles/program.dir/parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/program.dir/parser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.cpp > CMakeFiles/program.dir/parser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rick/2ptx-Compiler/2ptx-compiler/parser.cpp > CMakeFiles/program.dir/parser.cpp.i
 
 CMakeFiles/program.dir/parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/program.dir/parser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.cpp -o CMakeFiles/program.dir/parser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rick/2ptx-Compiler/2ptx-compiler/parser.cpp -o CMakeFiles/program.dir/parser.cpp.s
 
 CMakeFiles/program.dir/program.cpp.o: CMakeFiles/program.dir/flags.make
-CMakeFiles/program.dir/program.cpp.o: /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/program.cpp
+CMakeFiles/program.dir/program.cpp.o: /home/rick/2ptx-Compiler/2ptx-compiler/program.cpp
 CMakeFiles/program.dir/program.cpp.o: CMakeFiles/program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/program.dir/program.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/program.dir/program.cpp.o -MF CMakeFiles/program.dir/program.cpp.o.d -o CMakeFiles/program.dir/program.cpp.o -c /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/program.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rick/2ptx-Compiler/2ptx-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/program.dir/program.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/program.dir/program.cpp.o -MF CMakeFiles/program.dir/program.cpp.o.d -o CMakeFiles/program.dir/program.cpp.o -c /home/rick/2ptx-Compiler/2ptx-compiler/program.cpp
 
 CMakeFiles/program.dir/program.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/program.dir/program.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/program.cpp > CMakeFiles/program.dir/program.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rick/2ptx-Compiler/2ptx-compiler/program.cpp > CMakeFiles/program.dir/program.cpp.i
 
 CMakeFiles/program.dir/program.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/program.dir/program.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/program.cpp -o CMakeFiles/program.dir/program.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rick/2ptx-Compiler/2ptx-compiler/program.cpp -o CMakeFiles/program.dir/program.cpp.s
 
 # Object files for target program
 program_OBJECTS = \
@@ -109,7 +109,7 @@ program: CMakeFiles/program.dir/parser.cpp.o
 program: CMakeFiles/program.dir/program.cpp.o
 program: CMakeFiles/program.dir/build.make
 program: CMakeFiles/program.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable program"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/rick/2ptx-Compiler/2ptx-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable program"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/program.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -121,6 +121,6 @@ CMakeFiles/program.dir/clean:
 .PHONY : CMakeFiles/program.dir/clean
 
 CMakeFiles/program.dir/depend:
-	cd /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build/CMakeFiles/program.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/rick/2ptx-Compiler/2ptx-compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rick/2ptx-Compiler/2ptx-compiler /home/rick/2ptx-Compiler/2ptx-compiler /home/rick/2ptx-Compiler/2ptx-compiler/build /home/rick/2ptx-Compiler/2ptx-compiler/build /home/rick/2ptx-Compiler/2ptx-compiler/build/CMakeFiles/program.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/program.dir/depend
 

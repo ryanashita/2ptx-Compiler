@@ -65,13 +65,14 @@ int main(int argc, char* argv[]) {
             LivenessAnalysis la;
             la.analyze(program_node->ast->tac_nodes); 
             std::cout << "\n=== LIVENESS ANALYSIS ===\n" << std::endl;
-            std::cout << "Temps\n"; 
+            std::cout << "--- Temp Live Ranges --- \n"; 
             for (auto& [key,value] : la.temp_to_live_range) {
-                std::cout << key << " - " << value.start << ":" << value.end << std::endl; 
+                std::cout << "temp " << key << " - " << value.start << ":" << value.end << std::endl; 
             }
+            std::cout << "\n--- Instruction Liveness --- \n"; 
             int live_temp_count = 0; 
             for (auto& instr_live : la.instruction_liveness) {
-                std::cout << live_temp_count << ". Live before: [";
+                std::cout << "instruction " << live_temp_count << ". Live before: [";
                 for (auto& before : instr_live.live_before) {
                     std::cout << before << ",";
                 }
@@ -81,25 +82,9 @@ int main(int argc, char* argv[]) {
                     std::cout << after << ",";
                 }
                 std::cout << "]" << std::endl;
+                ++live_temp_count; 
             }
-            std::cout << "Vars\n";
-            for (auto& [key,value] : la.var_to_live_range) {
-                std::cout << key << " - " << value.start << ":" << value.end << std::endl; 
-            }
-            int live_var_count= 0; 
-            for (auto& instr_live : la.instruction_liveness) {
-                
-                std::cout << live_var_count << ". Live before: [";
-                for (auto& before : instr_live.live_var_before) {
-                    std::cout << before << ",";
-                }
-                std::cout << "]"; 
-                std::cout << " Live after: [";
-                for (auto& after : instr_live.live_var_after) {
-                    std::cout << after << ",";
-                }
-                std::cout << "]" << std::endl;
-            }
+            std::cout << "\n=== REGISTER ALLOCATION ===\n" << std::endl;
             // perform register allocation
             RegisterAllocation alloc(2,program_node->ast->tac_nodes,la.temp_to_live_range,la.instruction_liveness, la.var_to_live_range);
             alloc.allocate(); 

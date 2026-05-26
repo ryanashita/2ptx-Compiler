@@ -1,7 +1,7 @@
 CMakeFiles/compiler_tests.dir/parser.cpp.o: \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.cpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/parser.cpp \
  /usr/include/stdc-predef.h \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/parser.hpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/parser.hpp \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -379,12 +379,12 @@ CMakeFiles/compiler_tests.dir/parser.cpp.o: \
  /usr/include/tao/pegtl/parse.hpp /usr/include/tao/pegtl/rewind_mode.hpp \
  /usr/include/tao/pegtl/internal/enable_control.hpp \
  /usr/include/tao/pegtl/internal/iterator.hpp \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/ast.hpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/ast.hpp \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \
  /usr/include/c++/13/bits/hashtable_policy.h \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/erase_if.h \
- /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/tac_nodes.hpp \
+ /home/rick/2ptx-Compiler/2ptx-compiler/tac_nodes.hpp \
  /usr/include/c++/13/variant /usr/include/c++/13/format

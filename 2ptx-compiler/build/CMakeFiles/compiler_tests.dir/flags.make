@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend
+CXX_INCLUDES = -I/home/rick/2ptx-Compiler/2ptx-compiler
 
-CXX_FLAGS = -g -std=c++17
+CXX_FLAGS = -std=c++17
 

@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend
-BuildDirectory: /home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend/build
+SourceDirectory: /home/rick/2ptx-Compiler/2ptx-compiler
+BuildDirectory: /home/rick/2ptx-Compiler/2ptx-compiler/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -27,7 +27,7 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/rick/Yanashita-tutorials/toy-gpu-compiler-frontend"
+ConfigureCommand: "/usr/bin/cmake" "/home/rick/2ptx-Compiler/2ptx-compiler"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 

@@ -47,7 +47,7 @@ public:
     TACConstant(Temp d, Constant c) : _dest{d}, _constant{c} {}; 
 
     std::string to_string() const override {
-        return _dest.name() + " <- " + std::to_string(_constant.value) + "//TACConstant"; 
+        return _dest.name() + " <- " + std::to_string(_constant.value); 
     }
 }; 
 
@@ -79,7 +79,7 @@ public:
             case TACOp::DIV: op_str = "/"; break; 
         }
 
-        return _dest.name() + " <- " + operand_to_str(_operand1) + " " + op_str + " " +operand_to_str(_operand2) + "//TACBinaryOp"; 
+        return _dest.name() + " <- " + operand_to_str(_operand1) + " " + op_str + " " +operand_to_str(_operand2); 
     }
 };
 
@@ -92,7 +92,7 @@ public:
     TACStore(TACVariable dvar, Temp temp) : _dest_variable{dvar}, _temporary{temp} {}; 
 
     std::string to_string() const override {
-        return _dest_variable.varname + " <- " + _temporary.name() + "//TACStore"; 
+        return _dest_variable.varname + " <- " + _temporary.name(); 
     }
 }; 
 
@@ -104,7 +104,7 @@ public:
     TACLoad(TACVariable var, Temp temp) : _var{var}, _dest_temp{temp} {}; 
 
     std::string to_string() const override {
-        return _dest_temp.name() + " <- " + _var.varname + "//TACLoad"; 
+        return _dest_temp.name() + " <- " + _var.varname; 
     }
 };
 
