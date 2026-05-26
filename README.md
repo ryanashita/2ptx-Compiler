@@ -12,6 +12,15 @@ CSCI 498 and 32 were both amazing learning experiences for me as an aspiring com
 
 I hope that anyone who finds this compiler and the "tutorials" I write will benefit from my work! 
 
+GitHub Pages link: [https://ryanashita.github.io/2ptx-Compiler](https://ryanashita.github.io/2ptx-Compiler)
+
+## How to run the 2ptx-compiler
+1. Write a program in the DSL. An example is ```2;3;5;x=(3+5);6;7;y=(6+2);```. Some notes for the program:
+- semi-colons separate statements
+- arithmetic must be in parentheses if the result of the arithmetic is the rvalue for an assignment
+2. Navigate to ```~/2ptx-Compiler/2ptx-compiler```
+3. Run the command ```cmake --build build```
+
 ## Tutorials
 
 ### Grafting GPU Binaries
