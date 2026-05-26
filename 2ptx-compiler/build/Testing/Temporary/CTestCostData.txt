@@ -22,28 +22,76 @@ Parse 0 0
 Parse 0 0
 Parse 0 0
 Parse 0 0
-Parse Integer 1 0.00165042
-Parse Positive Integer 1 0.00146288
-Parse Negative Integer 1 0.00141156
-Parse Addition 1 0.00147366
-Parse Subtraction 1 0.00153695
-Parse Multiplication 1 0.00155963
-Parse Division 1 0.00168748
-Parse Parentheses Addition  1 0.00174641
-Parse Parentheses Whitespace Addition  1 0.00165796
-Parse Vector  1 0.00180773
-Parse Assignment  1 0.00177627
-Parse Addition Assignment  1 0.00194554
-Parse Vector Assignment  1 0.00202494
-Parse Addition Whitespace Vector 1 0.00211757
-Parse Vector Vector 1 0.00219669
-Parse Addition Assignment Addition Integer 1 0.00234489
-Parse Assignment Vector Addition 1 0.00246665
-Parse Assignment Variable Addition Reassignment 1 0.00262331
-Parse Emit Three Address Code Constant String 1 0.00262868
-Parse Emit Three Address Code Arithmetic 1 0.00304031
-Parse Emit Three Address Code Arithmetic 2 1 0.00325031
-Parse Emit Three Address Code Multiplication 1 0.0036731
-Parse Emit TAC Arithmetic Assignment 1 0.00446258
-Parse Emit TAC Complex 1 1 0.0062332
+Parse 0 1
+Parse 0 0
+Parse 0 0
+Parse 0 1
+Parse 0 1
+Parse 0 1
+Parse 0 1
+Parse 0 0
+Parse 0 0
+Parse 0 1
+Parse 0 1
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 1
+Parse 0 0
+Parse 0 0
+Parse 0 1
+Parse 0 1
+Parse 0 1
+Parse 0 1
+Parse 0 0
+Parse 0 0
+Parse 0 1
+Parse 0 1
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse 0 0
+Parse Integer 1 0.00163042
+Parse Positive Integer 1 0.00143486
+Parse Negative Integer 1 0.00140476
+Parse Addition 1 0.00139988
+Parse Subtraction 1 0.00153751
+Parse Multiplication 1 0.00150849
+Parse Division 1 0.00146696
+Parse Parentheses Addition  1 0.00166853
+Parse Parentheses Whitespace Addition  1 0.00163332
+Parse Vector  1 0.00168244
+Parse Assignment  1 0.00171048
+Parse Addition Assignment  1 0.0018013
+Parse Vector Assignment  1 0.00185587
+Parse Addition Whitespace Vector 1 0.00199473
+Parse Vector Vector 1 0.00197147
+Parse Addition Assignment Addition Integer 1 0.0022178
+Parse Assignment Vector Addition 1 0.00221194
+Parse Assignment Variable Addition Reassignment 1 0.00243007
+Parse Emit Three Address Code Constant String 1 0.00237274
+Parse Emit Three Address Code Arithmetic 1 0.00257158
+Parse Emit Three Address Code Arithmetic 2 1 0.002776
+Parse Emit Three Address Code Multiplication 1 0.00300512
+Parse Emit TAC Arithmetic Assignment 1 0.00342543
+Parse Emit TAC Complex 1 1 0.00356424
 ---

@@ -1,14 +1,14 @@
-Start testing: May 26 23:32 UTC
+Start testing: May 26 23:55 UTC
 ----------------------------------------------------------
 1/24 Testing: Parse Integer
 1/24 Test: Parse Integer
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Integer"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Integer" start time: May 26 23:32 UTC
+"Parse Integer" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Integer"
-Randomness seeded to: 4244589208
+Randomness seeded to: 3968968605
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -33,7 +33,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Integer" end time: May 26 23:32 UTC
+"Parse Integer" end time: May 26 23:55 UTC
 "Parse Integer" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -41,11 +41,11 @@ Test Passed.
 2/24 Test: Parse Positive Integer
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Positive Integer"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Positive Integer" start time: May 26 23:32 UTC
+"Parse Positive Integer" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Positive Integer"
-Randomness seeded to: 3644345457
+Randomness seeded to: 1758097487
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -70,7 +70,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Positive Integer" end time: May 26 23:32 UTC
+"Parse Positive Integer" end time: May 26 23:55 UTC
 "Parse Positive Integer" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -78,11 +78,11 @@ Test Passed.
 3/24 Test: Parse Negative Integer
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Negative Integer"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Negative Integer" start time: May 26 23:32 UTC
+"Parse Negative Integer" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Negative Integer"
-Randomness seeded to: 2286829851
+Randomness seeded to: 2500150514
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -107,7 +107,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Negative Integer" end time: May 26 23:32 UTC
+"Parse Negative Integer" end time: May 26 23:55 UTC
 "Parse Negative Integer" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -115,11 +115,11 @@ Test Passed.
 4/24 Test: Parse Addition
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Addition"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Addition" start time: May 26 23:32 UTC
+"Parse Addition" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Addition"
-Randomness seeded to: 3859075340
+Randomness seeded to: 3274937378
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -153,7 +153,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Addition" end time: May 26 23:32 UTC
+"Parse Addition" end time: May 26 23:55 UTC
 "Parse Addition" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -161,11 +161,11 @@ Test Passed.
 5/24 Test: Parse Subtraction
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Subtraction"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Subtraction" start time: May 26 23:32 UTC
+"Parse Subtraction" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Subtraction"
-Randomness seeded to: 292331805
+Randomness seeded to: 1093868438
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -199,7 +199,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Subtraction" end time: May 26 23:32 UTC
+"Parse Subtraction" end time: May 26 23:55 UTC
 "Parse Subtraction" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -207,11 +207,11 @@ Test Passed.
 6/24 Test: Parse Multiplication
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Multiplication"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Multiplication" start time: May 26 23:32 UTC
+"Parse Multiplication" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Multiplication"
-Randomness seeded to: 2252529275
+Randomness seeded to: 343151620
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -245,7 +245,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Multiplication" end time: May 26 23:32 UTC
+"Parse Multiplication" end time: May 26 23:55 UTC
 "Parse Multiplication" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -253,11 +253,11 @@ Test Passed.
 7/24 Test: Parse Division
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Division"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Division" start time: May 26 23:32 UTC
+"Parse Division" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Division"
-Randomness seeded to: 577679578
+Randomness seeded to: 3223379081
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -291,7 +291,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Division" end time: May 26 23:32 UTC
+"Parse Division" end time: May 26 23:55 UTC
 "Parse Division" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -299,11 +299,11 @@ Test Passed.
 8/24 Test: Parse Parentheses Addition 
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Parentheses Addition "
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Parentheses Addition " start time: May 26 23:32 UTC
+"Parse Parentheses Addition " start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Parentheses Addition"
-Randomness seeded to: 890114482
+Randomness seeded to: 2946188788
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -379,7 +379,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Parentheses Addition " end time: May 26 23:32 UTC
+"Parse Parentheses Addition " end time: May 26 23:55 UTC
 "Parse Parentheses Addition " time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -387,11 +387,11 @@ Test Passed.
 9/24 Test: Parse Parentheses Whitespace Addition 
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Parentheses Whitespace Addition "
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Parentheses Whitespace Addition " start time: May 26 23:32 UTC
+"Parse Parentheses Whitespace Addition " start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Parentheses Whitespace Addition"
-Randomness seeded to: 1385345326
+Randomness seeded to: 3637579759
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -459,7 +459,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Parentheses Whitespace Addition " end time: May 26 23:32 UTC
+"Parse Parentheses Whitespace Addition " end time: May 26 23:55 UTC
 "Parse Parentheses Whitespace Addition " time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -467,11 +467,11 @@ Test Passed.
 10/24 Test: Parse Vector 
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Vector "
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Vector " start time: May 26 23:32 UTC
+"Parse Vector " start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Vector"
-Randomness seeded to: 495993111
+Randomness seeded to: 1126958186
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -509,7 +509,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Vector " end time: May 26 23:32 UTC
+"Parse Vector " end time: May 26 23:55 UTC
 "Parse Vector " time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -517,11 +517,11 @@ Test Passed.
 11/24 Test: Parse Assignment 
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Assignment "
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Assignment " start time: May 26 23:32 UTC
+"Parse Assignment " start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Assignment"
-Randomness seeded to: 2573357526
+Randomness seeded to: 3251109242
 === PARSE PEGTL ===
 
 --- VARIABLE TRANSFORM ---
@@ -547,7 +547,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Assignment " end time: May 26 23:32 UTC
+"Parse Assignment " end time: May 26 23:55 UTC
 "Parse Assignment " time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -555,11 +555,11 @@ Test Passed.
 12/24 Test: Parse Addition Assignment 
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Addition Assignment "
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Addition Assignment " start time: May 26 23:32 UTC
+"Parse Addition Assignment " start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Addition Assignment"
-Randomness seeded to: 2126834778
+Randomness seeded to: 1045408398
 === PARSE PEGTL ===
 
 --- VARIABLE TRANSFORM ---
@@ -628,7 +628,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Addition Assignment " end time: May 26 23:32 UTC
+"Parse Addition Assignment " end time: May 26 23:55 UTC
 "Parse Addition Assignment " time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -636,11 +636,11 @@ Test Passed.
 13/24 Test: Parse Vector Assignment 
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Vector Assignment "
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Vector Assignment " start time: May 26 23:32 UTC
+"Parse Vector Assignment " start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Vector Assignment"
-Randomness seeded to: 711650179
+Randomness seeded to: 2081447593
 === PARSE PEGTL ===
 
 --- VARIABLE TRANSFORM ---
@@ -683,7 +683,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Vector Assignment " end time: May 26 23:32 UTC
+"Parse Vector Assignment " end time: May 26 23:55 UTC
 "Parse Vector Assignment " time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -691,11 +691,11 @@ Test Passed.
 14/24 Test: Parse Addition Whitespace Vector
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Addition Whitespace Vector"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Addition Whitespace Vector" start time: May 26 23:32 UTC
+"Parse Addition Whitespace Vector" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Addition Whitespace Vector"
-Randomness seeded to: 1087004625
+Randomness seeded to: 2374836048
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -776,7 +776,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Addition Whitespace Vector" end time: May 26 23:32 UTC
+"Parse Addition Whitespace Vector" end time: May 26 23:55 UTC
 "Parse Addition Whitespace Vector" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -784,11 +784,11 @@ Test Passed.
 15/24 Test: Parse Vector Vector
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Vector Vector"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Vector Vector" start time: May 26 23:32 UTC
+"Parse Vector Vector" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Vector Vector"
-Randomness seeded to: 3659169914
+Randomness seeded to: 21485371
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -827,7 +827,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Vector Vector" end time: May 26 23:32 UTC
+"Parse Vector Vector" end time: May 26 23:55 UTC
 "Parse Vector Vector" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -835,11 +835,11 @@ Test Passed.
 16/24 Test: Parse Addition Assignment Addition Integer
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Addition Assignment Addition Integer"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Addition Assignment Addition Integer" start time: May 26 23:32 UTC
+"Parse Addition Assignment Addition Integer" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Addition Assignment Addition Integer"
-Randomness seeded to: 3369080538
+Randomness seeded to: 2371218428
 === PARSE PEGTL ===
 
 --- VARIABLE TRANSFORM ---
@@ -949,7 +949,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Addition Assignment Addition Integer" end time: May 26 23:32 UTC
+"Parse Addition Assignment Addition Integer" end time: May 26 23:55 UTC
 "Parse Addition Assignment Addition Integer" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -957,11 +957,11 @@ Test Passed.
 17/24 Test: Parse Assignment Vector Addition
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Assignment Vector Addition"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Assignment Vector Addition" start time: May 26 23:32 UTC
+"Parse Assignment Vector Addition" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Assignment Vector Addition"
-Randomness seeded to: 3164729677
+Randomness seeded to: 2561795045
 === PARSE PEGTL ===
 
 --- VARIABLE TRANSFORM ---
@@ -1033,7 +1033,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Assignment Vector Addition" end time: May 26 23:32 UTC
+"Parse Assignment Vector Addition" end time: May 26 23:55 UTC
 "Parse Assignment Vector Addition" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1041,11 +1041,11 @@ Test Passed.
 18/24 Test: Parse Assignment Variable Addition Reassignment
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Assignment Variable Addition Reassignment"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Assignment Variable Addition Reassignment" start time: May 26 23:32 UTC
+"Parse Assignment Variable Addition Reassignment" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Assignment Variable Addition Reassignment"
-Randomness seeded to: 3973306715
+Randomness seeded to: 1907973145
 === PARSE PEGTL ===
 
 --- VARIABLE TRANSFORM ---
@@ -1124,7 +1124,7 @@ All tests passed (4 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Assignment Variable Addition Reassignment" end time: May 26 23:32 UTC
+"Parse Assignment Variable Addition Reassignment" end time: May 26 23:55 UTC
 "Parse Assignment Variable Addition Reassignment" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1132,11 +1132,11 @@ Test Passed.
 19/24 Test: Parse Emit Three Address Code Constant String
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Emit Three Address Code Constant String"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Emit Three Address Code Constant String" start time: May 26 23:32 UTC
+"Parse Emit Three Address Code Constant String" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Emit Three Address Code Constant String"
-Randomness seeded to: 725879280
+Randomness seeded to: 3830455113
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -1161,7 +1161,7 @@ All tests passed (5 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Emit Three Address Code Constant String" end time: May 26 23:32 UTC
+"Parse Emit Three Address Code Constant String" end time: May 26 23:55 UTC
 "Parse Emit Three Address Code Constant String" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1169,11 +1169,11 @@ Test Passed.
 20/24 Test: Parse Emit Three Address Code Arithmetic
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Emit Three Address Code Arithmetic"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Emit Three Address Code Arithmetic" start time: May 26 23:32 UTC
+"Parse Emit Three Address Code Arithmetic" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Emit Three Address Code Arithmetic"
-Randomness seeded to: 2435346487
+Randomness seeded to: 2381830741
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -1207,7 +1207,7 @@ All tests passed (7 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Emit Three Address Code Arithmetic" end time: May 26 23:32 UTC
+"Parse Emit Three Address Code Arithmetic" end time: May 26 23:55 UTC
 "Parse Emit Three Address Code Arithmetic" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1215,11 +1215,11 @@ Test Passed.
 21/24 Test: Parse Emit Three Address Code Arithmetic 2
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Emit Three Address Code Arithmetic 2"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Emit Three Address Code Arithmetic 2" start time: May 26 23:32 UTC
+"Parse Emit Three Address Code Arithmetic 2" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Emit Three Address Code Arithmetic 2"
-Randomness seeded to: 1992682680
+Randomness seeded to: 3203965386
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -1253,7 +1253,7 @@ All tests passed (6 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Emit Three Address Code Arithmetic 2" end time: May 26 23:32 UTC
+"Parse Emit Three Address Code Arithmetic 2" end time: May 26 23:55 UTC
 "Parse Emit Three Address Code Arithmetic 2" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1261,11 +1261,11 @@ Test Passed.
 22/24 Test: Parse Emit Three Address Code Multiplication
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Emit Three Address Code Multiplication"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Emit Three Address Code Multiplication" start time: May 26 23:32 UTC
+"Parse Emit Three Address Code Multiplication" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Emit Three Address Code Multiplication"
-Randomness seeded to: 3268553831
+Randomness seeded to: 3710736777
 === PARSE PEGTL ===
 
 --- NUMBER TRANSFORM ---
@@ -1299,7 +1299,7 @@ All tests passed (7 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Emit Three Address Code Multiplication" end time: May 26 23:32 UTC
+"Parse Emit Three Address Code Multiplication" end time: May 26 23:55 UTC
 "Parse Emit Three Address Code Multiplication" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1307,11 +1307,11 @@ Test Passed.
 23/24 Test: Parse Emit TAC Arithmetic Assignment
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Emit TAC Arithmetic Assignment"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Emit TAC Arithmetic Assignment" start time: May 26 23:32 UTC
+"Parse Emit TAC Arithmetic Assignment" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Emit TAC Arithmetic Assignment"
-Randomness seeded to: 2225239707
+Randomness seeded to: 3904815198
 === PARSE PEGTL ===
 
 --- VARIABLE TRANSFORM ---
@@ -1362,7 +1362,7 @@ All tests passed (8 assertions in 1 test case)
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Emit TAC Arithmetic Assignment" end time: May 26 23:32 UTC
+"Parse Emit TAC Arithmetic Assignment" end time: May 26 23:55 UTC
 "Parse Emit TAC Arithmetic Assignment" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -1370,11 +1370,11 @@ Test Passed.
 24/24 Test: Parse Emit TAC Complex 1
 Command: "/home/rick/2ptx-Compiler/2ptx-compiler/build/compiler_tests" "Parse Emit TAC Complex 1"
 Directory: /home/rick/2ptx-Compiler/2ptx-compiler/build
-"Parse Emit TAC Complex 1" start time: May 26 23:32 UTC
+"Parse Emit TAC Complex 1" start time: May 26 23:55 UTC
 Output:
 ----------------------------------------------------------
 Filters: "Parse Emit TAC Complex 1"
-Randomness seeded to: 1660487343
+Randomness seeded to: 2679805557
 === PARSE PEGTL ===
 
 --- VARIABLE TRANSFORM ---
@@ -1464,11 +1464,11 @@ ExpressionList size: 3
 All tests passed (13 assertions in 1 test case)
 
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"Parse Emit TAC Complex 1" end time: May 26 23:32 UTC
+"Parse Emit TAC Complex 1" end time: May 26 23:55 UTC
 "Parse Emit TAC Complex 1" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: May 26 23:32 UTC
+End testing: May 26 23:55 UTC

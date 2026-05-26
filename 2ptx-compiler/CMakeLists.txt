@@ -16,7 +16,7 @@ if (ENABLE_TESTS)
     find_package(Catch2 CONFIG REQUIRED)
 
     add_executable(compiler_tests
-        test/test_parser.cpp
+        test/test_compiler.cpp
         parser.cpp
     )
     target_link_libraries(compiler_tests PRIVATE Catch2::Catch2WithMain)

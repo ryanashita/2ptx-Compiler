@@ -69,19 +69,19 @@ include CMakeFiles/compiler_tests.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/compiler_tests.dir/flags.make
 
-CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o: CMakeFiles/compiler_tests.dir/flags.make
-CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o: /home/rick/2ptx-Compiler/2ptx-compiler/test/test_parser.cpp
-CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o: CMakeFiles/compiler_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rick/2ptx-Compiler/2ptx-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o -MF CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o.d -o CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o -c /home/rick/2ptx-Compiler/2ptx-compiler/test/test_parser.cpp
+CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.o: CMakeFiles/compiler_tests.dir/flags.make
+CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.o: /home/rick/2ptx-Compiler/2ptx-compiler/test/test_compiler.cpp
+CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.o: CMakeFiles/compiler_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rick/2ptx-Compiler/2ptx-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.o -MF CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.o.d -o CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.o -c /home/rick/2ptx-Compiler/2ptx-compiler/test/test_compiler.cpp
 
-CMakeFiles/compiler_tests.dir/test/test_parser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/compiler_tests.dir/test/test_parser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rick/2ptx-Compiler/2ptx-compiler/test/test_parser.cpp > CMakeFiles/compiler_tests.dir/test/test_parser.cpp.i
+CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rick/2ptx-Compiler/2ptx-compiler/test/test_compiler.cpp > CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.i
 
-CMakeFiles/compiler_tests.dir/test/test_parser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/compiler_tests.dir/test/test_parser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rick/2ptx-Compiler/2ptx-compiler/test/test_parser.cpp -o CMakeFiles/compiler_tests.dir/test/test_parser.cpp.s
+CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rick/2ptx-Compiler/2ptx-compiler/test/test_compiler.cpp -o CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.s
 
 CMakeFiles/compiler_tests.dir/parser.cpp.o: CMakeFiles/compiler_tests.dir/flags.make
 CMakeFiles/compiler_tests.dir/parser.cpp.o: /home/rick/2ptx-Compiler/2ptx-compiler/parser.cpp
@@ -99,13 +99,13 @@ CMakeFiles/compiler_tests.dir/parser.cpp.s: cmake_force
 
 # Object files for target compiler_tests
 compiler_tests_OBJECTS = \
-"CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o" \
+"CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.o" \
 "CMakeFiles/compiler_tests.dir/parser.cpp.o"
 
 # External object files for target compiler_tests
 compiler_tests_EXTERNAL_OBJECTS =
 
-compiler_tests: CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o
+compiler_tests: CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.o
 compiler_tests: CMakeFiles/compiler_tests.dir/parser.cpp.o
 compiler_tests: CMakeFiles/compiler_tests.dir/build.make
 compiler_tests: /usr/lib/libCatch2Main.a

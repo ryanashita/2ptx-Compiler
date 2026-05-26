@@ -567,29 +567,29 @@ program.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/program.cpp.s
 .PHONY : program.cpp.s
 
-test/test_parser.o: test/test_parser.cpp.o
-.PHONY : test/test_parser.o
+test/test_compiler.o: test/test_compiler.cpp.o
+.PHONY : test/test_compiler.o
 
 # target to build an object file
-test/test_parser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler_tests.dir/build.make CMakeFiles/compiler_tests.dir/test/test_parser.cpp.o
-.PHONY : test/test_parser.cpp.o
+test/test_compiler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler_tests.dir/build.make CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.o
+.PHONY : test/test_compiler.cpp.o
 
-test/test_parser.i: test/test_parser.cpp.i
-.PHONY : test/test_parser.i
+test/test_compiler.i: test/test_compiler.cpp.i
+.PHONY : test/test_compiler.i
 
 # target to preprocess a source file
-test/test_parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler_tests.dir/build.make CMakeFiles/compiler_tests.dir/test/test_parser.cpp.i
-.PHONY : test/test_parser.cpp.i
+test/test_compiler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler_tests.dir/build.make CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.i
+.PHONY : test/test_compiler.cpp.i
 
-test/test_parser.s: test/test_parser.cpp.s
-.PHONY : test/test_parser.s
+test/test_compiler.s: test/test_compiler.cpp.s
+.PHONY : test/test_compiler.s
 
 # target to generate assembly for a file
-test/test_parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler_tests.dir/build.make CMakeFiles/compiler_tests.dir/test/test_parser.cpp.s
-.PHONY : test/test_parser.cpp.s
+test/test_compiler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/compiler_tests.dir/build.make CMakeFiles/compiler_tests.dir/test/test_compiler.cpp.s
+.PHONY : test/test_compiler.cpp.s
 
 # Help Target
 help:
@@ -636,9 +636,9 @@ help:
 	@echo "... program.o"
 	@echo "... program.i"
 	@echo "... program.s"
-	@echo "... test/test_parser.o"
-	@echo "... test/test_parser.i"
-	@echo "... test/test_parser.s"
+	@echo "... test/test_compiler.o"
+	@echo "... test/test_compiler.i"
+	@echo "... test/test_compiler.s"
 .PHONY : help
 
 
